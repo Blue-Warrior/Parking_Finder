@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Parking Spots</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+    <!-- Map Container -->
+    <div id="map" style="width: 100%; height: 100vh;"></div>
+
+    <script>
+        // Initialize the map and set its view to Dubai with a zoom level of 15
+        var map = L.map('map').setView([25.2048, 55.2708], 15);
+
+        // Set up the OpenStreetMap layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Add parking spot markers with popup info
+        var marker1 = L.marker([25.2048, 55.2708]).addTo(map)
+            .bindPopup('Parking Spot 1');
+        var marker2 = L.marker([25.2100, 55.2800]).addTo(map)
+            .bindPopup('Parking Spot 2');
+    </script>
+</body>
+</html>
+Index
